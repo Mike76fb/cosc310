@@ -8,80 +8,51 @@ import java.util.Random;
 
 public class ArrayVsArrayListLab {
 
-    protected static int arrayRandomAccess(int indices[], int arr[]) {
+    
+
+    protected static int listRandomAccess(int indices[], ArrayList<Integer> list) {
         int result = 0;
         for (int i = 0; i < indices.length; i++) {
-            result += arr[indices[i]];
+            result += list.get(indices[i]);
         }
         return result;
     }
 
-    
-
-        
     public static void main(String[] args) throws IOException {
-        /*long start = System.nanoTime();
-        System.out.println("Hello, world");
+       /* long start = System.nanoTime();
+        System.out.println("hello, world");
         long finish = System.nanoTime();
         long elapsed = finish - start;
         System.out.println("println: " + elapsed + "ns");
-
         start = System.nanoTime();
         arrayTest(30_000);
         finish = System.nanoTime();
         elapsed = finish - start;
-        System.out.println("arrayTest: " + elapsed + "ns");
-
-
-       //public static void main(String[] args) {
-       //long start = System.nanoTime();
-        //System.out.println("Hello, world");
-        //long finish = System.nanoTime();
-        //long elapsed = finish - start;
-        //System.out.println("println: " + elapsed + "ns");
-        //start = System.nanoTime();
-        //arrayTest(30_000);
-        //finish = System.nanoTime();
-        //elapsed = finish - start;
-        //System.out.println("arrayTest: " + elapsed + "ns"); */
-
+        System.out.println("arrayTest: " + elapsed + "ns"); */
         int arr[] = DataLoader.loadArray("numbers.txt");
         ArrayList<Integer> list = DataLoader.loadArrayList("numbers.txt");
         Random r = new Random();
         int indices[] = new int[100_000];
         for (int i = 0; i < indices.length; i++) {
             indices[i] = r.nextInt(arr.length);
-
         }
 
         PrintWriter fileOut = new PrintWriter(new File("results.csv"));
-        target tests[] = new target[8];
-        tests[0] = new ArrayRandom(arr, new ArrayList<>(list), "array, random_access");
-        tests[1] = new ArrayListRandom(arr, new ArrayList<>(list), "arraylist, random_access");
-        tests[2] = new ArrayInsert(arr, list, "array, append");
+        Target tests[] = new Target[8];
+
+        tests[0] = new ArrayRandom(arr, list, "array,random_access");
+        tests[1] = new ListRandom(arr, list, "arraylist, random_access");
+        tests[2] = new ArrayAppend(arr, list, "array,append");
         
-        for (int i=0; i<5; i++) {
-            long start = System.nanoTime();
-            int result = arrayRandomAccess(indices, arr);
-            long finish = System.nanoTime();
-            long elapsed = finish - start;
-            System.out.println("array: " + elapsed);
-            fileOut.printf("array,random_access, %d, %.2f,%d\n", i, elapsed / 1_000.0, result);
-
-         
-    
-
-            start = System.nanoTime();
-            result = listRandomAccess(indices, list);
-            finish = System.nanoTime();
-            elapsed = finish - start;
-            System.out.println("list: " + elapsed);
-            fileOut.printf("arraylist,random_access, %d, %.2f,%d\n", i, elapsed / 1_000.0, result);
-
-
+        for (Target target : tests) {
+            if (target != null) {
+                target.runTests(indices);
+                target.writeResults(fileOut);
+            }
         }
+        
+
         fileOut.close();
-
-
+        
     }
 }

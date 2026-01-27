@@ -1,10 +1,15 @@
-array,random_access, 0, 7.00,53529950
-arraylist,random_access, 0, 42.10,53529950
-array,random_access, 1, 8.30,53529950
-arraylist,random_access, 1, 30.80,53529950
-array,random_access, 2, 5.30,53529950
-arraylist,random_access, 2, 16.70,53529950
-array,random_access, 3, 4.60,53529950
-arraylist,random_access, 3, 16.30,53529950
-array,random_access, 4, 3.80,53529950
-arraylist,random_access, 4, 14.20,53529950
+array,random_access,1,1969.50
+array,random_access,2,363.20
+array,random_access,3,277.00
+array,random_access,4,301.20
+array,random_access,5,321.70
+arraylist, random_access,1,10817.70
+arraylist, random_access,2,2777.40
+arraylist, random_access,3,2024.50
+arraylist, random_access,4,737.30
+arraylist, random_access,5,597.70
+array,append,1,2705.30
+array,append,2,663.80
+array,append,3,492.20
+array,append,4,474.10
+array,append,5,461.30
