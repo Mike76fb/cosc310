@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Lab1 {
+public class ArrayVsArrayListLab {
 
     protected static int arrayRandomAccess(int indices[], int arr[]) {
         int result = 0;
@@ -48,13 +48,18 @@ public class Lab1 {
         int arr[] = DataLoader.loadArray("numbers.txt");
         ArrayList<Integer> list = DataLoader.loadArrayList("numbers.txt");
         Random r = new Random();
-        int indices[] = new int[100];
+        int indices[] = new int[100_000];
         for (int i = 0; i < indices.length; i++) {
             indices[i] = r.nextInt(arr.length);
 
         }
 
         PrintWriter fileOut = new PrintWriter(new File("results.csv"));
+        target tests[] = new target[8];
+        tests[0] = new ArrayRandom(arr, new ArrayList<>(list), "array, random_access");
+        tests[1] = new ArrayListRandom(arr, new ArrayList<>(list), "arraylist, random_access");
+        tests[2] = new ArrayInsert(arr, list, "array, append");
+        
         for (int i=0; i<5; i++) {
             long start = System.nanoTime();
             int result = arrayRandomAccess(indices, arr);

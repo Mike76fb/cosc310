@@ -21,7 +21,7 @@ abstract public class target {
     abstract public int method(int[] indicesornums);
 
     // calls the method under test TRIALS number of 
-    public void runTests(int indicesOrnums[]) {
+    public double runTests(int indicesOrnums[]) {
        long total = 0;
         for (int i = 0; i < TRIALS; i++) {
             long start = System.nanoTime();
