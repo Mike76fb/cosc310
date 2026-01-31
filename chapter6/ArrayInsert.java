@@ -2,7 +2,7 @@ package chapter6;
 
 import java.util.ArrayList;
 
-public class ArrayInsert extends target {
+public class ArrayInsert extends Target {
 
     public ArrayInsert(int arr[], ArrayList<Integer> list, String name) {
         super(arr, list, name);
