@@ -3,7 +3,7 @@ package chapter9;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
-public class ArrayListStack<T> implements Stacks<T> {  // interface name matches
+public class ArrayListStack<T> implements Stack<T> {
 
     private final ArrayList<T> data;
 
@@ -13,23 +13,25 @@ public class ArrayListStack<T> implements Stacks<T> {  // interface name matches
 
     @Override
     public void push(T item) {
-        data.add(item); // no throws
+        data.add(item);
     }
 
     @Override
     public T pop() throws Exception {
+        // TODO
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return data.remove(data.size() - 1);
+        return data.removeLast();
     }
 
     @Override
     public T top() throws Exception {
+        // TODO
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return data.get(data.size() - 1);
+        return data.getLast();
     }
 
     @Override

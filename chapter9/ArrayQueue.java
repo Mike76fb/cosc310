@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class ArrayQueue<T> implements Queue<T> {
+
+    // let's designate the end of the arraylist as the rear of the queue
+    // and the beginning of the arraylist as the front of the queue
     private ArrayList<T> data = new ArrayList<>();
 
     @Override

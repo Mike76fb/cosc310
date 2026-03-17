@@ -2,7 +2,7 @@ package chapter9;
 
 public class Lab2 {
 
-     public static void runStackTests(Stack<String> stack, String whichStack) throws Exception {
+    public static void runStackTests(Stack<String> stack, String whichStack) throws Exception {
         System.out.println(stack);
         stack.push("BHM");
         System.out.println(stack);
@@ -52,5 +52,3 @@ public class Lab2 {
         }
     }
 }
-    
-

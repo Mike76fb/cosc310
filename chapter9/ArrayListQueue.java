@@ -1,14 +1,13 @@
 package chapter9;
 
 import java.util.ArrayList;
-import java.util.NoSuchElementException;
 
 public class ArrayListQueue<T> implements Queue<T> {
 
-    
+    // Circular-buffer queue stored in an ArrayList.
     private ArrayList<T> buffer;
-    private int head; 
-    private int tail;
+    private int head; // index of current front
+    private int tail; // index of next insertion position
     private int size;
 
     public ArrayListQueue() {
@@ -29,9 +28,7 @@ public class ArrayListQueue<T> implements Queue<T> {
 
     @Override
     public T dequeue() throws Exception {
-        if (isEmpty()) {                       
-            throw new NoSuchElementException();  
-        }
+        // TODO - check for empty queue
         T item = buffer.get(head);
         size--;
         head = (head + 1) % buffer.size();
@@ -40,9 +37,7 @@ public class ArrayListQueue<T> implements Queue<T> {
 
     @Override
     public T front() throws Exception {
-        if (isEmpty()) {                        
-            throw new NoSuchElementException();  
-        }
+        // TODO
         return buffer.get(head);
     }
 
@@ -57,6 +52,7 @@ public class ArrayListQueue<T> implements Queue<T> {
     }
 
     private void ensureCapacity() {
+        // TODO: if needed > buffer.size(), double capacity and re-center head at 0
         if (size < buffer.size())
             return;
 
@@ -66,11 +62,11 @@ public class ArrayListQueue<T> implements Queue<T> {
         for (int i = 0; i < oldcap*2; i++) {
             bigbuffer.add(null);    
         }
-        for (int i = 0; i < oldcap; i++) {
-            bigbuffer.set(i, buffer.get(head));
+        for (int i=0; i<oldcap; i++) {
+            bigbuffer.set(i,buffer.get(head));
             head = (head + 1) % oldcap;
         }
-        buffer = bigbuffer; 
+        buffer = bigbuffer; // the "old" swaperoo trick
         head = 0;
         tail = oldcap;
     }

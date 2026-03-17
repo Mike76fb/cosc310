@@ -6,5 +6,4 @@ public interface Queue<T> {
     public T front() throws Exception;
     public int size();
     public boolean isEmpty();
-
 }

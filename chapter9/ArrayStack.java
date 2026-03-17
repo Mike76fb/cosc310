@@ -3,10 +3,15 @@ package chapter9;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
-public class ArrayStack<T> implements Stacks<T>, Comparable<Stacks<T>> {
+public class ArrayStack<T> implements Stack<T>, Comparable<Stack<T>> {
 
-    private ArrayList<T> data = new ArrayList<>();
+    ArrayList<T> data = new ArrayList<>();
 
+    /****
+     * Designate the "end" of the arraylist as the top of stack.
+     * 
+     * @param d - one piece of data we want to add to the stack
+     */
     @Override
     public void push(T d) {
         data.add(d);
@@ -54,7 +59,8 @@ public class ArrayStack<T> implements Stacks<T>, Comparable<Stacks<T>> {
     }
 
     @Override
-    public int compareTo(Stacks<T> o) {
-        return size() - o.size();
+    public int compareTo(Stack<T> o) {
+        return size()-o.size();
     }
+
 }

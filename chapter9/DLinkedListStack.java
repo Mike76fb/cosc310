@@ -12,23 +12,21 @@ public class DLinkedListStack<T> implements Stack<T> {
 
     @Override
     public void push(T item) {
+        // TODO (use tail as the top)
         list.add(item);
     }
 
     @Override
     public T pop() throws Exception {
-        if (isEmpty()) {
-            throw new Exception("Stack is empty");
-        }
+        // TODO
+       
         return list.removeLast().getData();
     }
 
     @Override
     public T top() throws Exception {
-        if (isEmpty()) {
-            throw new Exception("Stack is empty");
-        }
-        return list.get(list.size() - 1).getData();
+        // TODO
+        return list.get(list.size()-1).getData();
     }
 
     @Override

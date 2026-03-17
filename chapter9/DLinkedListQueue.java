@@ -12,23 +12,19 @@ public class DLinkedListQueue<T> implements Queue<T> {
 
     @Override
     public void enqueue(T item) {
-        list.add(item); // add to tail (FIFO)
+        list.add(item);
     }
 
     @Override
     public T dequeue() throws Exception {
-        if (isEmpty()) {
-            throw new Exception("Queue is empty");
-        }
-        return list.removeFirst().getData(); // remove from head
+        // TODO (dequeue from head using removeFirst())
+        return list.removeFirst().getData();
     }
 
     @Override
     public T front() throws Exception {
-        if (isEmpty()) {
-            throw new Exception("Queue is empty");
-        }
-        return list.get(0).getData(); // peek at head
+        // TODO (peek at head)
+        return list.get(0).getData();
     }
 
     @Override
@@ -39,6 +35,5 @@ public class DLinkedListQueue<T> implements Queue<T> {
     @Override
     public boolean isEmpty() {
         return list.isEmpty();
-        
     }
 }
