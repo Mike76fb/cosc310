@@ -1,40 +1,75 @@
 # Cycling GPS Data Analysis Project
 
-## Problem 1: 
+---
+
+ Part 1: Problem Formulation
+
+Problem 1 – Sorting (Power Analysis)
+
+Question: 
+How can we identify the top 10 highest power output moments during cycling activity?
+
+Goal:
+Sort all track points by power (watts) to identify peak performance efforts.
+
+---
+
+Problem 2 – Searching (Speed Analysis)
 
 **Question:**  
-How can we identify the top 10 highest cycling power outputs across the dataset?
+How can we find all timestamps where the rider exceeded 5 m/s speed?
 
-**Approach:**  
-I implemented Merge Sort to sort all track points based on power output in descending order.
+**Goal:**  
+Search through all records to extract high-speed cycling events.
 
-**Why Merge Sort:**
+---
+
+Part 2: Methods
+
+ Sorting (Merge Sort)
+Merge Sort was used to rank all records by power in descending order.
+
 - Time Complexity: O(n log n)
-- Stable and efficient for large datasets
-- Suitable for ranking operations
-
-**Result:**  
-The highest power outputs represent peak cycling performance moments.
+- Suitable for large datasets
+- Produces fully ordered ranking of performance
 
 ---
 
-## Problem 2: Searching (Speed Threshold Detection)
+Searching (Linear Search)
+A linear scan was used to filter all records where speed > 5 m/s.
 
-**Question:**  
-How can we efficiently find all timestamps where speed exceeds 8 m/s?
-
-**Approach:**  
-I used a linear search algorithm to scan all records and filter values exceeding the threshold.
-
-**Why Linear Search:**
-- Simple and effective for unsorted data
 - Time Complexity: O(n)
-
-**Result:**  
-This identifies high-intensity sprint sections of the ride.
+- Direct filtering of dataset
+- No preprocessing required
 
 ---
 
-## Conclusion
+Part 3: Results
 
-This project demonstrates how sorting and searching algorithms can be applied to real-world GPS cycling data to extract meaningful performance insights such as peak power output and high-speed events.
+ Problem 1 Results – Top Power Outputs
+
+After sorting the dataset by power, the highest recorded power values were:
+
+- 265 watts (timestamp 1141877648)
+- 234 watts (timestamp 1141877651)
+- 225 watts (timestamp 1141877647)
+- 214 watts (timestamp 1141877639)
+- 210 watts (timestamp 1141877638)
+
+**Interpretation:**  
+These represent peak exertion periods during cycling, likely sprint efforts or climbs.
+
+---
+
+Problem 2 Results – High-Speed Events (Speed > 5 m/s)
+
+The following timestamps exceeded 5 m/s:
+
+- 1141877646 → 5.10 m/s
+- 1141877647 → 5.13 m/s
+- 1141877648 → 5.33 m/s
+- 1141877649 → 5.54 m/s
+- 1141877653 → 6.08 m/s
+
+**Interpretation:**  
+These intervals represent high-intensity cycling segments where the rider was accelerating or sprinting.
