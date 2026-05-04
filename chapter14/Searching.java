@@ -3,7 +3,7 @@ package chapter14;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import json.BikeDataRecord;
+import chapter14.json.BikeDataRecord;
 
 public class Searching {
     
