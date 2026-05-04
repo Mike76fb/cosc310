@@ -19,7 +19,7 @@ public class BankAccount
 
    /**
       Constructs a bank account with a given balance.
-    * @param checkAcct 
+      @param acctno the account number
       @param initialBalance the initial balance
    */
    public BankAccount(String acctno, double initialBalance)

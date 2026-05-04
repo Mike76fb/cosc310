@@ -14,10 +14,10 @@ public class Customer
       Constructs a customer with a given number and PIN.
       @param aNumber the customer number
       @param aPin the personal identification number
- * @param saveBalance 
- * @param saveAcct 
- * @param checkBalance 
- * @param checkAcct 
+   @param checkAcct the checking account number
+   @param checkBalance the checking account balance
+   @param saveAcct the savings account number
+   @param saveBalance the savings account balance
    */
    public Customer(int aNumber, int aPin, String checkAcct, double checkBalance, String saveAcct, double saveBalance)
    {  
@@ -25,8 +25,6 @@ public class Customer
       pin = aPin;
       checkingAccount = new BankAccount(checkAcct, checkBalance);
       savingsAccount = new BankAccount(saveAcct, saveBalance);
-   }
-   
    /** 
       Tests if this customer matches a customer number 
       and PIN.
@@ -56,4 +54,8 @@ public class Customer
    {  
       return savingsAccount;
    }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d47fb1b4efbdb11f64628a1340c7923a486db8f9

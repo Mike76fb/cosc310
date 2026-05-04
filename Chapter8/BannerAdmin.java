@@ -1,3 +1,4 @@
+package chapter8;
 import chapter8.Person;
 
 public class BannerAdmin extends Person {

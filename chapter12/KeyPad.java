@@ -62,7 +62,6 @@ public class KeyPad extends JPanel
             display.setText("");
          }
       }
-
       clearButton.addActionListener(new 
             ClearButtonListener());      
       
