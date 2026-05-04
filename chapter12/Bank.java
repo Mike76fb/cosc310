@@ -69,8 +69,4 @@ public class Bank
       }
       return null;
    }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d47fb1b4efbdb11f64628a1340c7923a486db8f9

@@ -17,6 +17,5 @@ public class ArrayRandom extends Target {
         return result;
     }
 
-
     
 }
